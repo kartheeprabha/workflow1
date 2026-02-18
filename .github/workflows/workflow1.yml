@@ -1,0 +1,29 @@
+name: Print Branch and SHA
+
+on: push
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+
+    env:
+      APP_NAME: GitHubActionsPractice
+
+    steps:
+      - name: Print Branch
+        run: echo "Branch is ${{ github.ref_name }}"
+
+      - name: Print Commit SHA
+        run: echo "Commit SHA is ${{ github.sha }}"
+
+      - name: Print Actor
+        run: echo "Triggered by ${{ github.actor }}"
+
+      - name: Print OS
+        run: echo "Runner OS is ${{ runner.os }}"
+
+      - name: Print Repository Name
+        run: echo "Repository is ${{ github.repository }}"
+
+      - name: Print Env Variable
+        run: echo "App name is $APP_NAME"
